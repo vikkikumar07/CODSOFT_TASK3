@@ -33,6 +33,15 @@ class BankAccount {
         System.out.println("Current Balance : "+balance);
     }
 }
+
+class ATM {
+    private BankAccount account;
+
+    public ATM(BankAccount account) {
+        this.account = account;
+    }
+}
+
 public class ATMInterface {
     
 }
