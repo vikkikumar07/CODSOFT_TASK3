@@ -1,4 +1,6 @@
 package CODSOFT_TASK3;
+import java.util.Scanner;
+
 class BankAccount {
     private double balance;
 
@@ -39,6 +41,45 @@ class ATM {
 
     public ATM(BankAccount account) {
         this.account = account;
+    }
+
+    public void start() {
+        Scanner sc = new Scanner(System.in);
+        int choice;
+        boolean exit = true;
+
+        while(exit) {
+            System.out.println("==== ATM MENU ====");
+            System.out.println("1. Check Balance");
+            System.out.println("2. Deposit");
+            System.out.println("3. withdraw");
+            System.out.println("4. Exit");
+            System.out.print("Enter Choice : ");
+            choice =sc.nextInt();
+
+            switch(choice) {
+                case 1:
+                    account.checkBalance();
+                    break;
+                case 2:
+                    System.out.print("Enter Deposit Amount : ");
+                    double deposit = sc.nextDouble();
+                    account.deposit(deposit);
+                    break;
+                case 3:
+                    System.out.println("Enter Withdraw Amount : ");
+                    double withdraw = sc.nextDouble();
+                    account.withdraw(withdraw);
+                    break;
+                case 4: 
+                    exit = false;
+                    break;
+                default :
+                    System.out.println("Invalid Choice.");
+
+            }
+        }
+        sc.close();
     }
 }
 
