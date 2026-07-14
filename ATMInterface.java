@@ -27,6 +27,11 @@ class BankAccount {
             System.out.println(amount +" Withdrawn Successfuly.");
         }
     }
+
+    // check balance function
+    public void checkBalance() {
+        System.out.println("Current Balance : "+balance);
+    }
 }
 public class ATMInterface {
     
